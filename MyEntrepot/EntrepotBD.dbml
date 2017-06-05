@@ -1,0 +1,116 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="nicaragua" Class="EntrepotBDDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=yew.arvixe.com;Initial Catalog=nicaragua;Persist Security Info=True;User ID=roberto" SettingsObjectName="MyEntrepot.Properties.Settings" SettingsPropertyName="nicaraguaConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="roberto.Size" Member="Sizes">
+    <Type Name="Size">
+      <Column Name="id_Size" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="name" Type="System.String" DbType="VarChar(50) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="roberto.Wrapper" Member="Wrappers">
+    <Type Name="Wrapper">
+      <Column Name="id_Wrapper" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="name" Type="System.String" DbType="VarChar(50) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="roberto.Blend" Member="Blends">
+    <Type Name="Blend">
+      <Column Name="id_Blend" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="name" Type="System.String" DbType="VarChar(50) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="descrip" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="roberto.tb_liga" Member="tb_ligas">
+    <Type Name="tb_liga">
+      <Column Name="id_liga" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="liga" Type="System.String" DbType="VarChar(50) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="habano" Type="System.String" DbType="VarChar(2)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="roberto.tb_vitola" Member="tb_vitolas">
+    <Type Name="tb_vitola">
+      <Column Name="id_vitola" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="vitola" Type="System.String" DbType="VarChar(50) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="habano" Type="System.String" DbType="VarChar(2)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="roberto.tb_capa" Member="tb_capas">
+    <Type Name="tb_capa">
+      <Column Name="id_capa" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="capa" Type="System.String" DbType="VarChar(50) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="habano" Type="System.String" DbType="VarChar(2)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="roberto.View_TobaccoCatalog" Member="View_TobaccoCatalogs">
+    <Type Name="View_TobaccoCatalog">
+      <Column Name="name" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Size" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Wrapper" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Blend" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="roberto.View_Personal" Member="View_Personals">
+    <Type Name="View_Personal">
+      <Column Name="name" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="position" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="roberto.Personal" Member="Personals">
+    <Type Name="Personal">
+      <Column Name="id_Personal" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="name" Type="System.String" DbType="VarChar(100) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="position" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="roberto.Production_Daily" Member="Production_Dailies">
+    <Type Name="Production_Daily">
+      <Column Name="id_Prod_Daily" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="product" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="personal" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="cost_Bonchero" Type="System.Decimal" DbType="Money NOT NULL" CanBeNull="false" />
+      <Column Name="cost_Rolero" Type="System.Decimal" DbType="Money NOT NULL" CanBeNull="false" />
+      <Column Name="Date" Type="System.DateTime" DbType="Date NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="quantity" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="roberto.Stock" Member="Stocks">
+    <Type Name="Stock">
+      <Column Name="id_Depot" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="product" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="stock" Member="stock1" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="dateE" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+      <Column Name="referDaily" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="roberto.View_Production_Daily" Member="View_Production_Dailies">
+    <Type Name="View_Production_Daily">
+      <Column Name="Product" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Personal" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="[Cost Bonchero]" Member="Cost_Bonchero" Type="System.String" DbType="NVarChar(4000)" CanBeNull="true" />
+      <Column Name="[Cost Rolero]" Member="Cost_Rolero" Type="System.String" DbType="NVarChar(4000)" CanBeNull="true" />
+      <Column Name="Date" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+      <Column Name="quantity" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="roberto.View_Stock" Member="View_Stocks">
+    <Type Name="View_Stock">
+      <Column Name="Product" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Qty" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="roberto.View_Stock_Detail" Member="View_Stock_Details">
+    <Type Name="View_Stock_Detail">
+      <Column Name="Product" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Qty" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Date" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Tobacco" Member="Tobaccos">
+    <Type Name="Tobacco">
+      <Column Name="size" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="wrapper" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="blend" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="name" Type="System.String" DbType="VarChar(50) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="id_Tobacco" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsDbGenerated="true" CanBeNull="false" />
+    </Type>
+  </Table>
+</Database>
